@@ -37,9 +37,14 @@ const [feat, setfeat]= useState(null);
     // It's going to utilize both slices of state to return the _name_ of the featured dev.
     // The beauty of closures is that we can "see" both slices of state from this region
     // of the program, without needing to inject the information through arguments.
-    prog.forEach(xx => 
+   /*  prog.forEach(xx => 
       xx.id === feat ? xx.name : null
-    )
+    ) */
+    for (let i = 0 ; i < prog.length ; i++) {
+      if (prog[i].id === feat ) {
+        return prog[i].name
+      }
+    }
   };
 
   const style = {
